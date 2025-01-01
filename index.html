@@ -550,7 +550,6 @@
           retail.classList.add("hidden");
           hoReCa.classList.add("hidden");
 
-          // Show relevant options and add required attributes
           if (selectedOption === "HoReCa") {
             hoReCaOp.classList.remove("hidden");
             zf_MandArray.push("Dropdown6");
@@ -560,21 +559,15 @@
           }
         } else if (type == "hoReCa-o") {
           const selectedOption = hoReCaD.value;
-
-          // Hide the HoReCa additional field initially
           hoReCa.classList.add("hidden");
 
-          // Show it if "Other" is selected
           if (selectedOption === "Other") {
             hoReCa.classList.remove("hidden");
           }
         } else if (type == "retail-o") {
           const selectedOption = retailD.value;
-
-          // Hide the Retail additional field initially
           retail.classList.add("hidden");
 
-          // Show it if "Other" is selected
           if (selectedOption === "Other") {
             retail.classList.remove("hidden");
           }
