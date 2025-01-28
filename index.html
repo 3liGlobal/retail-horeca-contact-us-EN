@@ -271,6 +271,34 @@
                 <div class="zf-clearBoth"></div>
               </li>
               <!---------Dropdown Ends Here---------->
+               <!---------Single Line Starts Here---------->
+               <li class="zf-tempFrmWrapper zf-large">
+                <label class="zf-labelName">
+                  Zip Code
+                  <em class="zf-important">*</em>
+                </label>
+                <div class="zf-tempContDiv">
+                  <span>
+                    <input
+                      type="text"
+                      name="SingleLine5"
+                      checktype="c1"
+                      value=""
+                      maxlength="255"
+                      fieldType="1"
+                      placeholder=""
+                  /></span>
+                  <p
+                    id="SingleLine5_error"
+                    class="zf-errorMessage"
+                    style="display: none"
+                  >
+                    Invalid value
+                  </p>
+                </div>
+                <div class="zf-clearBoth"></div>
+              </li>
+              <!---------Single Line Ends Here---------->
               <!---------Dropdown Starts Here---------->
               <li class="zf-tempFrmWrapper zf-large">
                 <label class="zf-labelName">
@@ -456,8 +484,15 @@
                     name="DecisionBox"
                   />
                   <label for="DecisionBox" class="zf-labelName"
-                    >I agree to the <a href="https://de.ooka.com/en/page/agb" target="_blank"> T&C </a>and the processing of my
-                    data as described in the <a href="https://de.ooka.com/en/content/cookie-richtlinie" target="_blank">Data and Cookie Policy</a>.
+                    >I agree to the
+                    <a href="https://de.ooka.com/en/page/agb" target="_blank">
+                      T&C </a
+                    >and the processing of my data as described in the
+                    <a
+                      href="https://de.ooka.com/en/content/cookie-richtlinie"
+                      target="_blank"
+                      >Data and Cookie Policy</a
+                    >.
                     <em class="zf-important">*</em>
                   </label>
                   <p
@@ -499,6 +534,7 @@
         "PhoneNumber_countrycode",
         "SingleLine3",
         "Dropdown4",
+        "SingleLine5",
         "Dropdown5",
         "DecisionBox",
       ];
@@ -511,6 +547,7 @@
         "SingleLine3",
         "SingleLine4",
         "Dropdown4",
+        "SingleLine5",
         "Dropdown5",
         "Dropdown",
         "Dropdown6",
@@ -539,6 +576,7 @@
           "PhoneNumber_countrycode",
           "SingleLine3",
           "Dropdown4",
+          "Number",
           "Dropdown5",
           "DecisionBox",
         ];
