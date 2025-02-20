@@ -531,26 +531,23 @@
                 <div class="zf-clearBoth"></div>
               </li>
               <!---------Single Line Ends Here---------->
-              <!---------Dropdown Starts Here---------->
-              <li class="zf-tempFrmWrapper zf-small" style="display: none">
+              <!---------Single Line Starts Here---------->
+              <li class="zf-tempFrmWrapper zf-small">
                 <label class="zf-labelName"> Lead Source </label>
                 <div class="zf-tempContDiv">
-                  <select
-                    class="zf-form-sBox"
-                    id="lead_source"
-                    name="Dropdown2"
-                    checktype="c1"
-                  >
-                    <option selected="true" value="-Select-">-Select-</option>
-                    <option value="Website&#x20;Partner&#x20;EN">
-                      Website Partner EN
-                    </option>
-                    <option value="HoReCa&#x20;Lead&#x20;form&#x20;en">
-                      HoReCa Lead form en
-                    </option>
-                  </select>
+                  <span>
+                    <input
+                      type="text"
+                      id="lead_source"
+                      name="SingleLine7"
+                      checktype="c1"
+                      value=""
+                      maxlength="255"
+                      fieldType="1"
+                      placeholder=""
+                  /></span>
                   <p
-                    id="Dropdown2_error"
+                    id="SingleLine7_error"
                     class="zf-errorMessage"
                     style="display: none"
                   >
@@ -559,7 +556,7 @@
                 </div>
                 <div class="zf-clearBoth"></div>
               </li>
-              <!---------Dropdown Ends Here---------->
+              <!---------Single Line Ends Here---------->
             </ul>
           </div>
           <!---------template Container Starts Here---------->
@@ -609,8 +606,8 @@
         "SingleLine1",
         "MultiLine",
         "DecisionBox",
+        "SingleLine7",
         "SingleLine6",
-        "Dropdown2",
       ];
       var isSalesIQIntegrationEnabled = false;
       var salesIQFieldsArray = [];
