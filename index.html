@@ -675,7 +675,7 @@
           const CampaignName = document.getElementById("campaign_name");
           if (leadSource || horecaExperts) {
             leadSource.value = event.data.utm_medium || "";
-            horecaExperts.value = event.data.utm_source || "";
+            CampaignName.value = event.data.utm_source || "";
           }
         }
       });
