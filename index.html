@@ -673,7 +673,7 @@
         if (event.data.utm_medium || event.data.utm_source) {
           const leadSource = document.getElementById("lead_source");
           const CampaignName = document.getElementById("campaign_name");
-          if (leadSource || horecaExperts) {
+          if (leadSource || CampaignName) {
             leadSource.value = event.data.utm_medium || "";
             CampaignName.value = event.data.utm_source || "";
           }
