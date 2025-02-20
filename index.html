@@ -271,8 +271,8 @@
                 <div class="zf-clearBoth"></div>
               </li>
               <!---------Dropdown Ends Here---------->
-               <!---------Single Line Starts Here---------->
-               <li class="zf-tempFrmWrapper zf-large">
+              <!---------Single Line Starts Here---------->
+              <li class="zf-tempFrmWrapper zf-large">
                 <label class="zf-labelName">
                   Zip Code
                   <em class="zf-important">*</em>
@@ -506,6 +506,60 @@
                 <div class="zf-clearBoth"></div>
               </li>
               <!---------Decision Ends Here---------->
+              <li class="zf-tempFrmWrapper zf-large" style="display: none">
+                <label class="zf-labelName"> Campaign Name </label>
+                <div class="zf-tempContDiv">
+                  <span>
+                    <input
+                      id="campaign_name"
+                      type="text"
+                      name="SingleLine6"
+                      checktype="c1"
+                      value=""
+                      maxlength="255"
+                      fieldType="1"
+                      placeholder=""
+                  /></span>
+                  <p
+                    id="SingleLine6_error"
+                    class="zf-errorMessage"
+                    style="display: none"
+                  >
+                    Invalid value
+                  </p>
+                </div>
+                <div class="zf-clearBoth"></div>
+              </li>
+              <!---------Single Line Ends Here---------->
+              <!---------Dropdown Starts Here---------->
+              <li class="zf-tempFrmWrapper zf-small" style="display: none">
+                <label class="zf-labelName"> Lead Source </label>
+                <div class="zf-tempContDiv">
+                  <select
+                    class="zf-form-sBox"
+                    id="lead_source"
+                    name="Dropdown2"
+                    checktype="c1"
+                  >
+                    <option selected="true" value="-Select-">-Select-</option>
+                    <option value="Website&#x20;Partner&#x20;EN">
+                      Website Partner EN
+                    </option>
+                    <option value="HoReCa&#x20;Lead&#x20;form&#x20;en">
+                      HoReCa Lead form en
+                    </option>
+                  </select>
+                  <p
+                    id="Dropdown2_error"
+                    class="zf-errorMessage"
+                    style="display: none"
+                  >
+                    Invalid value
+                  </p>
+                </div>
+                <div class="zf-clearBoth"></div>
+              </li>
+              <!---------Dropdown Ends Here---------->
             </ul>
           </div>
           <!---------template Container Starts Here---------->
@@ -555,6 +609,8 @@
         "SingleLine1",
         "MultiLine",
         "DecisionBox",
+        "SingleLine6",
+        "Dropdown2",
       ];
       var isSalesIQIntegrationEnabled = false;
       var salesIQFieldsArray = [];
@@ -611,6 +667,18 @@
           }
         }
       }
+    </script>
+    <script>
+      window.addEventListener("message", function (event) {
+        if (event.data.utm_medium || event.data.utm_source) {
+          const leadSource = document.getElementById("lead_source");
+          const CampaignName = document.getElementById("campaign_name");
+          if (leadSource || horecaExperts) {
+            leadSource.value = event.data.utm_medium || "";
+            horecaExperts.value = event.data.utm_source || "";
+          }
+        }
+      });
     </script>
   </body>
 </html>
