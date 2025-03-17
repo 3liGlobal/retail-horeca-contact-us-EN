@@ -172,10 +172,6 @@ ul {
   background: transparent;
 }
 
-.zf-templateWidth {
-  margin: 1% auto;
-}
-
 .zf-templateWrapper {
   background: #fff;
   border: 1px solid #d6d6d6;
@@ -293,7 +289,7 @@ ul {
 }
 
 .zf-tempFrmWrapper {
-  padding: 10px 15px;
+  padding: 8px 15px;
   margin: 1px 0;
 }
 
@@ -303,8 +299,8 @@ ul {
 }
 
 .zf-tempFrmWrapper .zf-labelName {
-  font-weight: bold;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 15px;
   color: #222222;
 }
 

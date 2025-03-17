@@ -505,6 +505,32 @@
                 </div>
                 <div class="zf-clearBoth"></div>
               </li>
+              <!---------Single Line Starts Here---------->
+              <li class="zf-tempFrmWrapper zf-small" style="display: none;">
+                <label class="zf-labelName"> UTM Medium </label>
+                <div class="zf-tempContDiv">
+                  <span>
+                    <input
+                      type="text"
+                      name="SingleLine7"
+                      checktype="c1"
+                      value=""
+                      maxlength="255"
+                      fieldType="1"
+                      placeholder=""
+                      id="lead_source"
+                  /></span>
+                  <p
+                    id="SingleLine7_error"
+                    class="zf-errorMessage"
+                    style="display: none"
+                  >
+                    Invalid value
+                  </p>
+                </div>
+                <div class="zf-clearBoth"></div>
+              </li>
+              <!---------Single Line Ends Here---------->
               <!---------Decision Ends Here---------->
               <li class="zf-tempFrmWrapper zf-large" style="display: none">
                 <label class="zf-labelName"> Campaign Name </label>
@@ -535,19 +561,12 @@
               <li class="zf-tempFrmWrapper zf-small" style="display: none;">
                 <label class="zf-labelName"> Lead Source </label>
                 <div class="zf-tempContDiv">
-                  <span>
-                    <input
-                      type="text"
-                      id="lead_source"
-                      name="SingleLine7"
-                      checktype="c1"
-                      value=""
-                      maxlength="255"
-                      fieldType="1"
-                      placeholder=""
-                  /></span>
+                  <select class="zf-form-sBox" name="Dropdown2" checktype="c1">
+                    <option selected="true" value="-Select-">-Select-</option>
+                    <option value="Website" selected>Website</option>
+                  </select>
                   <p
-                    id="SingleLine7_error"
+                    id="Dropdown2_error"
                     class="zf-errorMessage"
                     style="display: none"
                   >
@@ -606,6 +625,7 @@
         "SingleLine1",
         "MultiLine",
         "DecisionBox",
+        "Dropdown2",
         "SingleLine7",
         "SingleLine6",
       ];
