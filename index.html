@@ -518,7 +518,7 @@
                       maxlength="255"
                       fieldType="1"
                       placeholder=""
-                      id="lead_source"
+                      id="UTM"
                   /></span>
                   <p
                     id="SingleLine7_error"
@@ -688,10 +688,10 @@
     <script>
       window.addEventListener("message", function (event) {
         if (event.data.utm_medium || event.data.utm_source) {
-          const leadSource = document.getElementById("lead_source");
+          const UTMmedium = document.getElementById("UTM");
           const CampaignName = document.getElementById("campaign_name");
-          if (leadSource || CampaignName) {
-            leadSource.value = event.data.utm_medium || "";
+          if (UTMmedium || CampaignName) {
+            UTMmedium.value = event.data.utm_medium || "";
             CampaignName.value = event.data.utm_source || "";
           }
         }
