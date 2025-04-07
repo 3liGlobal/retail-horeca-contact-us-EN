@@ -687,12 +687,12 @@
     </script>
     <script>
       window.addEventListener("message", function (event) {
-        if (event.data.utm_medium || event.data.utm_Campaign) {
+        if (event.data.utm_medium || event.data.utm_source) {
           const UTMmedium = document.getElementById("UTM");
           const CampaignName = document.getElementById("campaign_name");
           if (UTMmedium || CampaignName) {
             UTMmedium.value = event.data.utm_medium || "";
-            CampaignName.value = event.data.utm_Campaign || "";
+            CampaignName.value = event.data.utm_source || "";
           }
         }
       });
