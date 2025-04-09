@@ -687,7 +687,6 @@
     </script>
 <script>
   window.addEventListener("message", function (event) {
-    console.log("Message received:", event.data);
     if (event.data.utm_medium || event.data.utm_campaign) {
       const UTMmedium = document.getElementById("UTM");
       const CampaignName = document.getElementById("campaign_name");
