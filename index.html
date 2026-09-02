@@ -1,5 +1,15 @@
 <html>
   <head>
+    <!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id=GTM-WKCGF56W'+dl;
+f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WKCGF56W');
+</script>
+<!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <title>Contact&#x20;Us&#x20;Retail&#x20;&#x2f;&#x20;HoReCa</title>
     <link href="css/form.css" rel="stylesheet" type="text/css" />
@@ -7,6 +17,11 @@
   </head>
   <body class="zf-backgroundBg">
     <!-- Change or deletion of the name attributes in the input tag will lead to empty values on record submission-->
+      <!-- Google Tag Manager (noscript) -->
+<noscript>
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKCGF56W"
+height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
     <div class="zf-templateWidth">
       <form
         action="https://forms.zohopublic.eu/ookaportal/form/ContactUsRetailHoReCa/formperma/3ceOpuZVtfm-nUStMTs0LKYnBgt6HmfBzKANa_AZkU4/htmlRecords/submit"
@@ -700,5 +715,103 @@
   });
 </script>
 
+    <script>
+window.dataLayer = window.dataLayer || [];
+
+// Mirror analytics events to the parent page's dataLayer, so GTM works whether
+// it lives inside this form or only on the embedding page (iframe).
+function zf_notifyParentWindow(eventName, payload) {
+  try {
+    // postMessage uses structured clone, which can't serialize functions
+    // (e.g. generate_lead's eventCallback) - strip them before sending.
+    var cloneablePayload = {};
+    for (var key in payload) {
+      if (typeof payload[key] !== "function") {
+        cloneablePayload[key] = payload[key];
+      }
+    }
+
+    var message = {
+      type: "zf_form_event",
+      eventName: eventName,
+      payload: cloneablePayload,
+    };
+
+    if (window.top && window.top !== window) {
+      window.top.postMessage(message, "*");
+    }
+  } catch (error) {
+    console.warn("Unable to notify parent window for analytics event", error);
+  }
+}
+
+// Only one place should ever push these events into a dataLayer:
+// - Embedded in an iframe: forward to the parent page's GTM only, so its
+//   dashboard is the single source of truth.
+// - Standalone (no parent): push into this page's own dataLayer, since
+//   there is no parent to forward to.
+var zf_isEmbedded = !!(window.top && window.top !== window);
+
+// Push form view event on page load
+var zf_formviewPayload = {
+  event: 'zf_formview',
+  zf_category: 'Zoho Forms',
+  zf_action: 'Form View',
+  zf_formname: 'ooka en retail horeca webform'
+};
+if (zf_isEmbedded) {
+  zf_notifyParentWindow('zf_formview', zf_formviewPayload);
+} else {
+  window.dataLayer.push(zf_formviewPayload);
+}
+
+console.log("Zoho form view event pushed!");
+</script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var form = document.getElementById("form");
+  if (!form) return;
+
+  form.addEventListener("submit", function (e) {
+    if (form.dataset.gtmFired === "1") return;
+
+    if (typeof zf_ValidateAndSubmit === "function" && !zf_ValidateAndSubmit()) {
+      e.preventDefault();
+      return;
+    }
+
+    e.preventDefault();
+
+    window.dataLayer = window.dataLayer || [];
+    var zf_leadPayload = {
+      event: 'generate_lead',
+      zf_category: 'Zoho Forms',
+      zf_action: 'Submit Form',
+      zf_formname: 'ooka en retail horeca webform',
+      eventCallback: function () {
+        if (form.dataset.gtmFired === "1") return;
+        form.dataset.gtmFired = "1";
+        form.submit();
+      },
+      eventTimeout: 2000
+    };
+    if (zf_isEmbedded) {
+      zf_notifyParentWindow('generate_lead', zf_leadPayload);
+    } else {
+      window.dataLayer.push(zf_leadPayload);
+    }
+
+    // Fallback: submit even if GTM never loads / is blocked
+    setTimeout(function () {
+      if (form.dataset.gtmFired === "1") return;
+      form.dataset.gtmFired = "1";
+      form.submit();
+    }, 2000);
+  }, true);
+});
+</script>
   </body>
 </html>
