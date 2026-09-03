@@ -752,20 +752,46 @@ function zf_notifyParentWindow(eventName, payload) {
 //   there is no parent to forward to.
 var zf_isEmbedded = !!(window.top && window.top !== window);
 
-// Push form view event on page load
+// Fire the form view event only once the form is actually visible on
+// screen, not just when the page/iframe loads. IntersectionObserver's
+// default root is the top-level viewport, so this correctly detects
+// scroll-into-view even though this script runs inside a cross-origin
+// iframe - the same mechanism ad-viewability tracking relies on.
 var zf_formviewPayload = {
   event: 'zf_formview',
   zf_category: 'Zoho Forms',
   zf_action: 'Form View',
   zf_formname: 'ooka en retail horeca webform'
 };
-if (zf_isEmbedded) {
-  zf_notifyParentWindow('zf_formview', zf_formviewPayload);
-} else {
-  window.dataLayer.push(zf_formviewPayload);
+
+var zf_formViewFired = false;
+function zf_fireFormView() {
+  if (zf_formViewFired) return;
+  zf_formViewFired = true;
+  if (zf_isEmbedded) {
+    zf_notifyParentWindow('zf_formview', zf_formviewPayload);
+  } else {
+    window.dataLayer.push(zf_formviewPayload);
+  }
+  console.log("Zoho form view event pushed!");
 }
 
-console.log("Zoho form view event pushed!");
+var zf_formEl = document.getElementById("form");
+if (zf_formEl && "IntersectionObserver" in window) {
+  var zf_viewObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        zf_fireFormView();
+        zf_viewObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+  zf_viewObserver.observe(zf_formEl);
+} else {
+  // No IntersectionObserver support, or the form isn't in the DOM yet -
+  // fall back to firing immediately so the event is never lost.
+  zf_fireFormView();
+}
 </script>
 
 
